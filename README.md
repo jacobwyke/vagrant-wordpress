@@ -27,15 +27,11 @@ Click to 'Create a Configuration File'.
 
 All the default values for the database are correct unless you have changed them in '[/puppet/manifests/init.pp](https://github.com/jacobwyke/vagrant-wordpress/blob/master/puppet/manifests/init.pp)'.
 
-Database Name: 	wordpress
-
-User Name:	username
-
-Password:	password
-
-Database Host:	localhost
-
-Table Prefix:	wp_
+	Database Name: 	wordpress
+	User Name:	username
+	Password:	password
+	Database Host:	localhost
+	Table Prefix:	wp_
 
 Click 'Submit' and then 'Run the install'. Add the site information and install WordPress.
 
