@@ -12,7 +12,7 @@ There are some config options available in '[vagrant.config.rb](https://github.c
 
 All config variables are exaplained in '[vagrant.config.rb](https://github.com/jacobwyke/vagrant-wordpress/blob/master/vagrant.config.rb)'.
 
-There are some additional variables you can change in the '[init.pp]()' file to change the database username/password that are created.
+There are some additional variables you can change in the '[/puppet/manifests/init.pp](https://github.com/jacobwyke/vagrant-wordpress/blob/master/puppet/manifests/init.pp)' file to change the database username/password that are created.
 
 By default a root mysql user will be setup with the password 'thisismypassword' and a database called 'wordpress' will be created with a username 'username' and default password of 'password'.
 
@@ -25,12 +25,16 @@ Go to: [http://10.0.1.60](http://10.0.1.60)
 
 Click to 'Create a Configuration File'.
 
-All the default values for the database are correct unless you have changed them in '[init.pp]()'.
+All the default values for the database are correct unless you have changed them in '[/puppet/manifests/init.pp](https://github.com/jacobwyke/vagrant-wordpress/blob/master/puppet/manifests/init.pp)'.
 
 Database Name: 	wordpress
+
 User Name:	username
+
 Password:	password
+
 Database Host:	localhost
+
 Table Prefix:	wp_
 
 Click 'Submit' and then 'Run the install'. Add the site information and install WordPress.
