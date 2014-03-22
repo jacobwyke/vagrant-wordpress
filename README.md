@@ -3,9 +3,9 @@ Vagrant WordPress
 
 [Vagrant](http://www.vagrantup.com/) VM for an Ubuntu Precise (12.04) box running the latest [WordPress](http://wordpress.org/) version.
 
-This will launch a virtual machine running the latest release of WordPress on PHP 5.4.
+This will launch a virtual machine running the latest release of WordPress on PHP 5.5.
 
-Tested with Vagrant 1.3.1.
+Tested with Vagrant 1.5.1.
 
 #Config#
 There are some config options available in '[vagrant.config.rb](https://github.com/jacobwyke/vagrant-wordpress/blob/master/vagrant.config.rb)' which allow you to easily change the IP address the VM uses.
