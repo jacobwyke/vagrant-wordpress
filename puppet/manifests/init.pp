@@ -43,14 +43,23 @@ class repository {
 	}
 	
 	#Adds the PPA for php 5.4
+	#exec { 'add-ppa':
+	#	path    => '/bin:/usr/bin',
+	#	command => 'add-apt-repository ppa:ondrej/php5-oldstable',
+	#	require => [
+	#		Package['python-software-properties'],
+	#	]
+	#}
+
+	#Adds the PPA for php 5.5
 	exec { 'add-ppa':
 		path    => '/bin:/usr/bin',
-		command => 'add-apt-repository ppa:ondrej/php5-oldstable',
+		command => 'add-apt-repository ppa:ondrej/php5',
 		require => [
 			Package['python-software-properties'],
 		]
 	}
-	
+		
 	#Refresh the list of packages again
 	exec { 'apt-get-update2':
 		command => 'apt-get update',
