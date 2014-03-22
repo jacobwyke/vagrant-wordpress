@@ -128,10 +128,24 @@ class apache {
 			Package['apache2'],
 		]
 	}
+	file { '/etc/apache2/sites-available':
+		ensure 	=> directory,
+		recurse => true,
+		force 	=> true,
+		source  => '/vagrant/puppet/files/etc/apache2/sites-available',
+		group 	=> 'root',
+		owner	=> 'root',
+		mode	=> '0644',
+		require => [
+			Package['apache2'],
+		],
+		notify  => Service['apache2'],
+	}
 	service { 'apache2':
 		ensure  => running,
 		require => [
 			Package['apache2'],
+			File['/etc/apache2/sites-available'],
 		]
 	}
 }
