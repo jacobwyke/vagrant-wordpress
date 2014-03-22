@@ -8,15 +8,11 @@ Vagrant.configure("2") do |config|
 	config.vm.box = "precise64"
 	config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 	
-	#Port forward - uncomment if you want to forward http from the VM to your localhost - means you can access the wordpres site via http://localhost/
-	#config.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
+	#port forward the VM's web server port to a local port set in the config file (default is 8080)
+	config.vm.network :forwarded_port, guest: 80, host: FORWARD_PORT, auto_correct: true
 	
 	#hostname
 	config.vm.hostname = SERVER_HOSTNAME
-	
-	#network location
-	config.vm.network :public_network, ip: SERVER_PUBLIC_IP_ADDRESS
-	config.vm.network :private_network, ip: SERVER_PRIVATE_IP_ADDRESS
 	
 	#set machine resources
 	config.vm.provider :virtualbox do |v|

@@ -5,11 +5,8 @@ module VagrantConfig
 	#hostname of the VM
 	SERVER_HOSTNAME = 'wordpress.local'
 	
-	#public IP address to access the VM
-	SERVER_PUBLIC_IP_ADDRESS = '10.0.0.60'
-	
-	#private IP address to access the VM
-	SERVER_PRIVATE_IP_ADDRESS = '10.0.1.60'
+  #local port to access the VM's web server
+  FORWARD_PORT = '8080'
 	
 	#amount of memory to assign to the VM
 	SERVER_MEM = '256'

@@ -21,7 +21,7 @@ Run:
 
 	vagrant up
 
-Go to: [http://10.0.1.60](http://10.0.1.60)
+Go to: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 Click to 'Create a Configuration File'.
 
@@ -35,11 +35,11 @@ All the default values for the database are correct unless you have changed them
 
 Click 'Submit' and then 'Run the install'. Add the site information and install WordPress.
 
-You will now have a version of the latest WordPress up and running at [http://10.0.1.60](http://10.0.1.60).
+You will now have a version of the latest WordPress up and running at [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 #Troubleshooting#
 
-Virtual machine defaults to 10.0.1.60.
+By default the virtual machines web server port 80 is forwarded to your localhost on port 8080. If you already have a service running on port 8080 vagrant will auto select a new port number to use and notify you in the terminal output.
 
 If you get a server 500 message when attempting to view graphite try to provision the VM again with:
 
