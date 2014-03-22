@@ -59,6 +59,17 @@ class repository {
 			Exec['add-ppa'],
 		]
 	}
+
+	#Update all packages
+	exec { 'apt-get-upgrade':
+		command => 'sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade',
+		path    => ['/bin', '/usr/bin'],
+		timeout	=> 0,
+		returns	=> [0,1],
+		require => [
+			Exec['apt-get-update2'],
+		]
+	}
 }
 
 class system {
@@ -74,11 +85,16 @@ class system {
 }
 
 class wordpress {
+	file { '/vagrant/puppet/files/scripts/installWordpress.sh':
+		mode	=> '0755',
+	}
+	
 	exec { 'installWordpress':
 		command	=> '/vagrant/puppet/files/scripts/installWordpress.sh',
 		path   	=> ['/bin', '/usr/bin', '/usr/sbin'],
 		require => [
 			Package['apache2'],
+			File['/vagrant/puppet/files/scripts/installWordpress.sh']
 		]
 	}
 }
